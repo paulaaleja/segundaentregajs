@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         baseDeDatos.forEach((info) => {
             // Estructura
             const miNodo = document.createElement('div');
-            miNodo.classList.add('card', 'col-sm-4');
+            miNodo.classList.add('card', 'col-sm-6');
             // Body
             const miNodoCardBody = document.createElement('div');
             miNodoCardBody.classList.add('card-body');
@@ -142,6 +142,12 @@ document.addEventListener('DOMContentLoaded', () => {
         renderizarCarrito();
         // Borra LocalStorage
         localStorage.clear();
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Has cancelado tu carrito, podras volver a cargar tus productos',
+            footer: '<a href="">Volver a seleccionar</a>'
+          })
 
     }
 
@@ -154,8 +160,24 @@ document.addEventListener('DOMContentLoaded', () => {
         if (miLocalStorage.getItem('carrito') !== null) {
             
             carrito = JSON.parse(miLocalStorage.getItem('carrito'));
+      
         }
+        else (carrito.length === 0 && console.log ("el carrito esta vacio"))
+
+        
+
+
+
+
+
     }
+
+
+
+
+
+
+
 
     // Eventos
     DOMbotonVaciar.addEventListener('click', vaciarCarrito);
