@@ -59,6 +59,22 @@ document.addEventListener('DOMContentLoaded', () => {
         renderizarCarrito();
         // Actualizamos el LocalStorage
         guardarCarritoEnLocalStorage();
+
+        //mostrar que se agrego el producot nuevo con libreria
+        Toastify({
+            text: "Añadiste un producto al carrito",
+            duration: 3000,
+            destination: "https://github.com/apvarun/toastify-js",
+            newWindow: true,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "right", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+              background: "linear-gradient(to right, #04a6d8)",
+            },
+            onClick: function(){} // Callback after click
+          }).showToast();
     }
 
     /**
