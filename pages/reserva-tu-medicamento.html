@@ -236,57 +236,74 @@
 
             <div class="row justify-content-center">
                 <div class="col-lg-9">
-                    <form id="form">
-                        <div class="row g-3">
-                            <div class="col-sm-6">
-                                <input type="text" class="form-control bg-light border-0 px-4"
-                                    placeholder="Nombre y Apellido" name="nombre" style="height: 55px;" required>
-                            </div>
-                            <div class="col-sm-6">
-                                <input type="email" class="form-control bg-light border-0 px-4" placeholder="Tu Email"
-                                    name="mail" style="height: 55px;" required>
-                            </div>
-                            <div class="col-sm-6">
-                                <input type="text" class="form-control bg-light border-0 px-4" placeholder="Dni"
-                                    name="dni" style="height: 55px;" required>
-                            </div>
-                            <div class="col-sm-6">
-                                <input type="text" class="form-control bg-light border-0 px-4" placeholder="Obra Social"
-                                    name="obrasocial" style="height: 55px;">
-                            </div>
-                            <div class="col-sm-6">
-                                <input type="text" class="form-control bg-light border-0 px-4"
-                                    placeholder="Tel de contacto" name="tel" style="height: 55px;" required>
-                            </div>
-                            <div class="col-sm-6">
-                                <input type="file" class="form-control bg-light border-0 px-4" placeholder="archivo"
-                                    name="archivo" style="height: 55px;">
-                            </div>
-                            <div class="col-sm-12">
-                                <input type="text" class="form-control bg-light border-0 px-4"
-                                    placeholder="Medicacion a solicitar" name="med" style="height: 55px;">
-                            </div>
-                            <div class="col-sm-12">
-                                <textarea class="form-control bg-light border-0 px-4 py-3" rows="4"
-                                    placeholder="Observaciones de receta" name="observa"></textarea>
-                            </div>
-                            <div class="col-sm-12">
-                                <button class="btn btn-primary border-inner w-100 py-3" id="button"
-                                    type="submit">Enviar</button>
-                            </div>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-9">
+                            <form action="" id="form">
+                                <div class="row g-3">
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control bg-light border-0 px-4"
+                                            placeholder="Nombre y Apellido" name="nombre" id="nombre" style="height: 55px;" required>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="email" class="form-control bg-light border-0 px-4" placeholder="Tu Email"
+                                            name="mail" id="mail" style="height: 55px;" required>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control bg-light border-0 px-4" placeholder="Dni"
+                                            name="dni" id="dni" style="height: 55px;" required>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control bg-light border-0 px-4" placeholder="Obra Social"
+                                            name="obrasocial" id="obrasocial" style="height: 55px;">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control bg-light border-0 px-4"
+                                            placeholder="Tel de contacto" name="tel"  id="tel" style="height: 55px;" required>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="file" class="form-control bg-light border-0 px-4" placeholder="archivo"
+                                            name="archivo" id="archivo" style="height: 55px;">
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <input type="text" class="form-control bg-light border-0 px-4"
+                                            placeholder="Medicacion a solicitar" id="med" style="height: 55px;">
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <textarea class="form-control bg-light border-0 px-4 py-3" rows="4"
+                                            placeholder="Observaciones de receta" id="obs"></textarea>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <button class="btn buttonbtn-primary border-inner w-100 py-3" id="btnGuardar"
+                                            type="submit">Enviar</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- Contact End -->
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-9">
+        <table id="tabla">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Mail</th>
+                    <th>dni</th>
+                    <th>Obra Social</th>
+                    <th>Tel</th>
+                    <th>Archivo</th>
+                    <th>Medicación</th>
+                    <th>Observaciones</th>
+        
+                    <th>Borrar</th>
+                </tr>
+            </table>
+            </div> </div> </div> </div>
+            <!-- Contact End -->
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
-    <script type="text/javascript">
-        emailjs.init('gLox-OgVe-0bGp7iV')
-    </script>
 
 
     <!--cierrar div con 80% aprox centrada-->
@@ -368,28 +385,6 @@
         integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
         crossorigin="anonymous"></script>
 
+        <script src="../js/formulario.js"></script>
 </body>
-<script>
-    const btn = document.getElementById('button');
-
-    document.getElementById('form')
-        .addEventListener('submit', function (event) {
-            event.preventDefault();
-
-            btn.value = 'Sending...';
-
-            const serviceID = 'default_service';
-            const templateID = 'template_plrht8u';
-
-            emailjs.sendForm(serviceID, templateID, this)
-                .then(() => {
-                    btn.value = 'Send Email';
-                    alert('Su formulario fue enviado con éxito, recibira un correo para poder retirarla cuando hayamos gestionado las autorizaciones. Gracias por elegirnos!');
-                }, (err) => {
-                    btn.value = 'Send Email';
-                    alert(JSON.stringify(err));
-                });
-        });
-</script>
-
-</html>
+</html>      
